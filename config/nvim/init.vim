@@ -21,14 +21,12 @@ let s:plugins_depends = [ 'Shougo/unite.vim' ]
 let s:plugins = [
 	\'tpope/vim-unimpaired',
 	\'qpkorr/vim-bufkill',
-	\'loganbickmore/syntax',
 	\'vim-airline/vim-airline-themes',
 	\'sheerun/vim-polyglot',
 	\'rhysd/vim-color-spring-night',
 	\'vim-airline/vim-airline',
 	\'Shougo/vimfiler.vim',
 	\'d42/vimfiler_git.vim',
-	\'fatih/vim-go',
 	\'dracula/vim'
 \]
 
