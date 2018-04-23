@@ -1,0 +1,2 @@
+#!/bin/sh
+'feh' '--bg-scale' '/home/logan/Pictures/wp1.jpeg' 

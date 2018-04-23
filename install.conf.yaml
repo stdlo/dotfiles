@@ -1,13 +1,28 @@
 - clean: ['~']
 
+- defaults:
+    link:
+        create: true
+
 - link:
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.bash_logout: bash_logout
+    ~/.fehbg: fehbg
     ~/.zshrc: zshrc
     ~/.Xresources: Xresources
     ~/.config/i3:
         path: config/i3/
-        create: true
+    ~/.config/i3blocks:
+        path: config/i3blocks/
+    ~/.config/rofi:
+        path: config/rofi/
+    ~/.config/nvim:
+        path: config/nvim/
+    ~/.config/dunst:
+        path: config/dunst/
+    ~/.oh-my-zsh:
+        path: oh-my-zsh/
+
 
 

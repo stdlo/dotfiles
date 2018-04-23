@@ -1,3 +1,9 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "config/nvim/lib/plugins/dracula"]
+	path = config/nvim/lib/plugins/dracula
+	url = git@github.com:dracula/vim
+[submodule "config/nvim/lib/dein.vim"]
+	path = config/nvim/lib/dein.vim
+	url = git@github.com:Shougo/dein.vim
