@@ -1,5 +1,7 @@
+! reload xresources by typing xrdb ~/.Xresources
 urxvt.scrollBar: false
-urxvt.font: xft:Hack-Regular:size=13,xft:Awesome:size=13
+urxvt.font: xft:Iosevka:size=14,\
+	xft:Hack:size=14
 urxvt.keysym.Shift-Control-V: eval:paste_clipboard
 urxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 urxvt.iso14755: false

@@ -1,8 +1,7 @@
 # i3 config file (v4)
 # config background
 
-font pango:Source Sans Pro 12
-#font pango:DejaVu Sans Mono 12
+font pango:Iosevka 14
 # font pango: somefont, FontAwesome 12
 # in vim to get the heart symbo type Ctrl+v then uf004
 
@@ -174,13 +173,14 @@ bindsym $mod+r mode "resize"
 
 # start i3bar
 bar {
+	font pango: t cherry, FontAwesome 11
+	#,Iosevka, DejaVu Sans Mono, FontAwesome 13
         status_command i3blocks
 	position top
 	tray_output primary
 	separator_symbol "·"
 	workspace_buttons yes
 	strip_workspace_numbers yes
-	font pango: DejaVu Sans Mono, FontAwesome 12
 
 	colors {
 		background #212121

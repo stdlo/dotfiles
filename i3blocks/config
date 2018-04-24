@@ -4,24 +4,23 @@ separator_block_width=15
 markup=none
 color=#F3F4F5
 
+[pacman-updates]
+command=~/.config/i3blocks/i3blocks-contrib/arch-update/arch-update.py -a -b "#5fff5f" -u "#FFFF85" -w "^linux.*" "$pacman.*" -a -q
+label=
+interval=5
+markup=pango
 
 # end goal is VOLUME - BATTERY - WIFI - TIME
 [volume-pulseaudio]
-command=~/.local/bin/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio -F 3 -f 3 -a -C '#F3F4F5' -m pulse -s Master
+command=~/.config/i3blocks/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio -F 3 -f 3 -a -C '#F3F4F5' -m pulse -s Master
 interval=1
 signal=1
 
 # Battery indicator
-[batterybar]
-command=~/.local/bin/i3blocks-contrib/batterybar/batterybar
-interval=5
+[battery_icon]
+command=~/.config/i3blocks/battery_icon
+interval=10
 markup=pango
-min_width=■■■■■
-
-#[battery2]
-#command=~/.local/bin/i3blocks-contrib/battery2/battery2
-#markup=pango
-#interval=30
 
 # Date Time
 [time]
