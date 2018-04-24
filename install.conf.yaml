@@ -21,6 +21,9 @@
         path: nvim/
     ~/.config/dunst:
         path: dunst/
+    ~/.config/gtk-3.0/settings.ini:
+        path: gtk-3.0/settings.ini
+        force: true
     ~/.oh-my-zsh:
         path: oh-my-zsh/
 
