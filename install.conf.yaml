@@ -5,22 +5,22 @@
         create: true
 
 - link:
-    ~/.bash_profile: bash_profile
-    ~/.bashrc: bashrc
-    ~/.bash_logout: bash_logout
-    ~/.fehbg: fehbg
-    ~/.zshrc: zshrc
-    ~/.Xresources: Xresources
+    ~/.bash_profile: .bash_profile
+    ~/.bashrc: .bashrc
+    ~/.bash_logout: .bash_logout
+    ~/.fehbg: .fehbg
+    ~/.zshrc: .zshrc
+    ~/.Xresources: .Xresources
     ~/.config/i3:
-        path: config/i3/
+        path: i3/
     ~/.config/i3blocks:
-        path: config/i3blocks/
+        path: i3blocks/
     ~/.config/rofi:
-        path: config/rofi/
+        path: rofi/
     ~/.config/nvim:
-        path: config/nvim/
+        path: nvim/
     ~/.config/dunst:
-        path: config/dunst/
+        path: dunst/
     ~/.oh-my-zsh:
         path: oh-my-zsh/
 

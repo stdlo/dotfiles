@@ -1,8 +1,8 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "config/nvim/lib/dein.vim"]
-	path = config/nvim/lib/dein.vim
+[submodule "nvim/lib/dein.vim"]
+	path = nvim/lib/dein.vim
 	url = git@github.com:Shougo/dein.vim
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
