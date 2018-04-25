@@ -171,26 +171,36 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# configure borders
+# class                 border  backgr. text    indicator child_border
+client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD   #2B83A6
+client.focused_inactive #212121 #212121 #86888C #292D2E   #5A5A5A
+client.unfocused        #212121 #212121 #86888C #292D2E   #5A5A5A
+client.urgent           #D64E4E #D64E4E #FFFFFF #D64E4E   #D64E4E
+client.placeholder      #212121 #0C0C0C #FFFFFF #212121   #262626
+client.background       #212121
+
 # start i3bar
 bar {
-	font pango: t cherry, FontAwesome 11
-	#,Iosevka, DejaVu Sans Mono, FontAwesome 13
-        status_command i3blocks
-	position top
-	tray_output primary
-	separator_symbol "·"
-	workspace_buttons yes
-	strip_workspace_numbers yes
+       font pango: Sarasa Mono J, FontAwesome 11
+       #,Iosevka, DejaVu Sans Mono, FontAwesome 13
+       status_command i3blocks
+       position top
+       tray_output primary
+       tray_padding 2
+       separator_symbol "·"
+       workspace_buttons yes
+       strip_workspace_numbers yes
 
-	colors {
-		background #212121
-		statusline #DDDDDD
-		separator #666666
-		focused_workspace #2B83A6 #2B83A6 #FFFFFF
-		active_workspace #212121 #212121 #FFFFFF
-		inactive_workspace #212121 #212121 #86888C
-		urgent_workspace #D64E4E #D64E4E #FFFFFF
-	}
+       colors {
+               background #212121
+               statusline #DDDDDD
+               separator #666666
+               focused_workspace #2B83A6 #2B83A6 #FFFFFF
+               active_workspace #212121 #212121 #FFFFFF
+               inactive_workspace #212121 #212121 #86888C
+               urgent_workspace #D64E4E #D64E4E #FFFFFF
+       }
 }
 
 # i3-gaps
@@ -199,5 +209,6 @@ gaps inner 8
 gaps outer 0
 
 # startup applications
+#exec_always --no-startup-id exec ~/.config/polybar/launch.sh
 exec --no-startup-id feh --bg-scale /home/logan/Pictures/wp1.jpeg
 exec --no-startup-id nm-applet --sm-disable

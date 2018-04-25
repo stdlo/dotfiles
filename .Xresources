@@ -1,11 +1,14 @@
 ! reload xresources by typing xrdb ~/.Xresources
 urxvt.scrollBar: false
-urxvt.font: xft:Sarasa Mono J:size=13,\
+urxvt.font: \
+	xft:Sarasa Mono J:size=13, \
 	xft:Hack:size=13
 urxvt.keysym.Shift-Control-V: eval:paste_clipboard
 urxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 urxvt.iso14755: false
 urxvt.iso14755_52: false
+
+
 ! Dracula Xresources palette
 *.foreground: #F8F8F2
 *.background: #282A36

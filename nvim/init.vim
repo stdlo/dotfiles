@@ -24,6 +24,7 @@ let s:plugins = [
 	\'vim-airline/vim-airline-themes',
 	\'sheerun/vim-polyglot',
 	\'rhysd/vim-color-spring-night',
+	\'ayu-theme/ayu-vim',
 	\'vim-airline/vim-airline',
 	\'ryanoasis/vim-devicons',
 	\'Shougo/vimfiler.vim',
@@ -61,6 +62,10 @@ filetype plugin indent on
 
 " enable theme
 syntax on
+" setup ayu
+" "set termguicolors
+"let ayucolor="mirage"
+"colorscheme ayu
 colorscheme dracula
 
 " remaps
