@@ -11,8 +11,6 @@
     ~/.fehbg: .fehbg
     ~/.zshrc: .zshrc
     ~/.Xresources: .Xresources
-    ~/.config/polybar:
-        path: polybar/
     ~/.config/i3:
         path: i3/
     ~/.config/i3blocks:
@@ -28,6 +26,3 @@
         force: true
     ~/.oh-my-zsh:
         path: oh-my-zsh/
-
-
-
