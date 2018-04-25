@@ -25,6 +25,7 @@ let s:plugins = [
 	\'sheerun/vim-polyglot',
 	\'rhysd/vim-color-spring-night',
 	\'vim-airline/vim-airline',
+	\'ryanoasis/vim-devicons',
 	\'Shougo/vimfiler.vim',
 	\'d42/vimfiler_git.vim',
 	\'dracula/vim'
