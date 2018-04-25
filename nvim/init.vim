@@ -66,6 +66,7 @@ syntax on
 " "set termguicolors
 "let ayucolor="mirage"
 "colorscheme ayu
+let g:dracula_colorterm = 0
 colorscheme dracula
 
 " remaps
