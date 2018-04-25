@@ -1,6 +1,6 @@
 <h1 align="center">dotfiles</h1>
 
-![screenshot](https://imgur.com/hDPvEcu)
+![screenshot](https://i.imgur.com/hDPvEcu.jpg)
 
 ## Details
 - CLI
