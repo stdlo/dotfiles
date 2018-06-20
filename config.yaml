@@ -11,6 +11,7 @@
     ~/.fehbg: .fehbg
     ~/.zshrc: .zshrc
     ~/.Xresources: .Xresources
+    ~/.tmux.conf: .tmux.conf
     ~/.config/i3:
         path: i3/
     ~/.config/i3blocks:
