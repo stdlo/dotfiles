@@ -29,7 +29,10 @@ let s:plugins = [
 	\'ryanoasis/vim-devicons',
 	\'Shougo/vimfiler.vim',
 	\'d42/vimfiler_git.vim',
-	\'dracula/vim'
+	\'dracula/vim',
+	\'Shougo/deoplete.nvim',
+	\'roxma/nvim-yarp',
+	\'roxma/vim-hug-neovim-rpc'
 \]
 
 " enable dein.vim and install plugins
@@ -60,16 +63,19 @@ endif
 " post plugin setup
 filetype plugin indent on
 
+" enable deoplete
+let g:deoplete#enable_at_startup = 1
+
 " enable theme
 syntax on
 " setup ayu
-" "set termguicolors
-"let ayucolor="mirage"
-"colorscheme ayu
-let g:dracula_colorterm = 0
-colorscheme dracula
+set termguicolors
+let ayucolor="mirage"
+colorscheme ayu
+"let g:dracula_colorterm = 0
+"colorscheme dracula
 
-" remaps
+"" remaps
 nnoremap ; :
 noremap <Leader>s :update<CR>
 noremap <Leader>v "+p
@@ -80,7 +86,11 @@ nnoremap <C-tab>   :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
 nnoremap <S-Tab>   :bprevious<CR>
 nnoremap <Tab>     :bnext<CR>
-
+" https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 
 " plugin remaps
