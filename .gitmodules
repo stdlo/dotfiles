@@ -10,3 +10,6 @@
 [submodule "i3blocks/i3blocks-contrib"]
 	path = i3blocks/i3blocks-contrib
 	url = git@github.com:vivien/i3blocks-contrib
+[submodule "meta/dotbot"]
+	path = meta/dotbot
+	url = https://github.com/anishathalye/dotbot.git

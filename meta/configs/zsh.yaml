@@ -1,0 +1,4 @@
+- link:
+    ~/.zshrc: .zshrc
+    ~/.oh-my-zsh:
+        path: oh-my-zsh/

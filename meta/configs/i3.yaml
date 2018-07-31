@@ -1,0 +1,13 @@
+- link:
+    ~/.fehbg: .fehbg
+    ~/.config/i3:
+        path: i3/
+    ~/.config/i3blocks:
+        path: i3blocks/
+    ~/.config/rofi:
+        path: rofi/
+    ~/.config/dunst:
+        path: dunst/
+    ~/.config/gtk-3.0/settings.ini:
+        path: gtk-3.0/settings.ini
+        force: true
