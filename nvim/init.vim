@@ -7,35 +7,35 @@ set backspace=indent,eol,start
 set number
 set nobackup
 set noswapfile
+set wildmenu
+set mouse=a
 if &compatible
 	set nocompatible
 endif
 
-" let leader = , and \
-let mapleader=","
-nmap \ ,
-
-
 " define plugins
 let s:plugins_depends = [ 'Shougo/unite.vim' ]
 let s:plugins = [
-	\'tpope/vim-unimpaired',
-	\'qpkorr/vim-bufkill',
-	\'vim-airline/vim-airline-themes',
 	\'sheerun/vim-polyglot',
-	\'rhysd/vim-color-spring-night',
 	\'ayu-theme/ayu-vim',
 	\'vim-airline/vim-airline',
-	\'ryanoasis/vim-devicons',
-	\'Shougo/vimfiler.vim',
-	\'d42/vimfiler_git.vim',
-	\'dracula/vim',
-	\'Shougo/deoplete.nvim',
+	\'airblade/vim-gitgutter',
+	\'janko-m/vim-test',
+	\'scrooloose/nerdtree',
+	\'tiagofumo/vim-nerdtree-syntax-highlight',
+	\'Xuyuanp/nerdtree-git-plugin',
 	\'roxma/nvim-yarp',
-	\'roxma/vim-hug-neovim-rpc'
+	\'roxma/vim-hug-neovim-rpc',
+	\'Shougo/deoplete.nvim'
 \]
+"" Disabled plugins
+"\'ryanoasis/vim-devicons',
+"\'vim-airline/vim-airline-themes',
+"\'qpkorr/vim-bufkill',
+"\'tpope/vim-unimpaired',
+"\'tpope/vim-sensible',
 
-" enable dein.vim and install plugins
+"" enable dein.vim and install plugins
 set runtimepath+=~/.config/nvim/lib/dein.vim
 let s:plugin_dir = expand('~/.config/nvim/lib/plugins')
 if dein#load_state(s:plugin_dir)
@@ -72,15 +72,18 @@ syntax on
 set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
-"let g:dracula_colorterm = 0
-"colorscheme dracula
 
 "" remaps
+" set leader to , and \
+let mapleader=","
+nmap \ ,
 nnoremap ; :
-noremap <Leader>s :update<CR>
-noremap <Leader>v "+p
-noremap <Leader>V "+P
-noremap <Leader>c "+y
+" quick save
+"noremap <Leader>s :update<CR>
+" copy paste shortcuts
+"noremap <Leader>v "+p
+"noremap <Leader>V "+P
+"noremap <Leader>c "+y
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
@@ -96,9 +99,9 @@ nnoremap <C-H> <C-W><C-H>
 " plugin remaps
 nnoremap <C-\> :call Tree()<CR>
 function! Tree()
-	if exists(":VimFiler")
-		execute "VimFilerExplorer"
-	elseif exists(":NERDTree")
+"	if exists(":VimFiler")
+"		execute "VimFilerExplorer"
+	if exists(":NERDTree")
 		execute "NERDTreeToggle"
 	else
 		echo 'Nothing VimFiler and NERDTree were not loaded!'
@@ -106,9 +109,21 @@ function! Tree()
 	endif
 endfunction
 
-" Plugin Config "
+"" Plugin Config "
+" nerdtree
+let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI = 1
+" quit vim if the only window open is nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+" gitgutter
+set signcolumn=yes
+set updatetime=250
+
 " airline
 set laststatus=2
+" only display the filename in tabline
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#enabled = 1
 set noshowmode
