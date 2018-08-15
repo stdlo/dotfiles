@@ -10,23 +10,29 @@ set noswapfile
 set wildmenu
 set mouse=a
 if &compatible
-	set nocompatible
+  set nocompatible
 endif
+" tab v spaces config https://stackoverflow.com/a/234578/4863857
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=2
+set expandtab
 
 " define plugins
-let s:plugins_depends = [ 'Shougo/unite.vim' ]
+"let s:plugins_depends = [ 'Shougo/unite.vim' ]
 let s:plugins = [
-	\'sheerun/vim-polyglot',
-	\'ayu-theme/ayu-vim',
-	\'vim-airline/vim-airline',
-	\'airblade/vim-gitgutter',
-	\'janko-m/vim-test',
-	\'scrooloose/nerdtree',
-	\'tiagofumo/vim-nerdtree-syntax-highlight',
-	\'Xuyuanp/nerdtree-git-plugin',
-	\'roxma/nvim-yarp',
-	\'roxma/vim-hug-neovim-rpc',
-	\'Shougo/deoplete.nvim'
+  \'sheerun/vim-polyglot',
+  \'ayu-theme/ayu-vim',
+  \'vim-airline/vim-airline',
+  \'airblade/vim-gitgutter',
+  \'janko-m/vim-test',
+  \'scrooloose/nerdtree',
+  \'tiagofumo/vim-nerdtree-syntax-highlight',
+  \'Xuyuanp/nerdtree-git-plugin',
+  \'roxma/nvim-yarp',
+  \'roxma/vim-hug-neovim-rpc',
+  \'prettier/vim-prettier',
+  \'Shougo/deoplete.nvim'
 \]
 "" Disabled plugins
 "\'ryanoasis/vim-devicons',
@@ -39,29 +45,28 @@ let s:plugins = [
 set runtimepath+=~/.config/nvim/lib/dein.vim
 let s:plugin_dir = expand('~/.config/nvim/lib/plugins')
 if dein#load_state(s:plugin_dir)
-	call dein#begin(s:plugin_dir)
+  call dein#begin(s:plugin_dir)
 
-	" install dependencies
-	for p in s:plugins_depends
-		call dein#add(p)
-	endfor
+  " install dependencies
+  "for p in s:plugins_depends
+    "call dein#add(p)
+  "endfor
 
-	" install plugins
-	for p in s:plugins
-		call dein#add(p)
-	endfor
+  " install plugins
+  for p in s:plugins
+    call dein#add(p)
+  endfor
 
-	" end and perform install
-	" if new plugins exist
-	call dein#end()
-	call dein#save_state()
-	if dein#check_install()
-		call dein#install()
-	endif
+  " end and perform install
+  " if new plugins exist
+  call dein#end()
+  call dein#save_state()
+  if dein#check_install()
+    call dein#install()
+  endif
 endif
 
-" post plugin setup
-filetype plugin indent on
+"" post plugin setup
 
 " enable deoplete
 let g:deoplete#enable_at_startup = 1
@@ -94,22 +99,29 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
+" close current buffer
+nnoremap <C-W> :bdelete<CR>
+" close all but current buffer
+nnoremap <Leader>w :%bdelete\|e#<CR>
 
 " plugin remaps
 nnoremap <C-\> :call Tree()<CR>
 function! Tree()
-"	if exists(":VimFiler")
-"		execute "VimFilerExplorer"
-	if exists(":NERDTree")
-		execute "NERDTreeToggle"
-	else
-		echo 'Nothing VimFiler and NERDTree were not loaded!'
-		"execute "Lexplore \<bar> vertical resize 30"
-	endif
+"  if exists(":VimFiler")
+"    execute "VimFilerExplorer"
+  if exists(":NERDTree")
+    execute "NERDTreeToggle"
+  else
+    echo 'Nothing VimFiler and NERDTree were not loaded!'
+    "execute "Lexplore \<bar> vertical resize 30"
+  endif
 endfunction
 
 "" Plugin Config "
+" prettier
+let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.json,*.md PrettierAsync
+
 " nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
