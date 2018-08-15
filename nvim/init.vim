@@ -32,6 +32,7 @@ let s:plugins = [
   \'roxma/nvim-yarp',
   \'roxma/vim-hug-neovim-rpc',
   \'prettier/vim-prettier',
+  \'wokalski/autocomplete-flow',
   \'Shougo/deoplete.nvim'
 \]
 "" Disabled plugins
@@ -78,6 +79,7 @@ set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
 
+set colorcolumn=80
 "" remaps
 " set leader to , and \
 let mapleader=","
@@ -88,7 +90,7 @@ nnoremap ; :
 " copy paste shortcuts
 "noremap <Leader>v "+p
 "noremap <Leader>V "+P
-"noremap <Leader>c "+y
+noremap <Leader>c "*y<CR>
 nnoremap <C-S-tab> :tabprevious<CR>
 nnoremap <C-tab>   :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
@@ -103,16 +105,46 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-W> :bdelete<CR>
 " close all but current buffer
 nnoremap <Leader>w :%bdelete\|e#<CR>
-
-" plugin remaps
-nnoremap <C-\> :call Tree()<CR>
-function! Tree()
-"  if exists(":VimFiler")
-"    execute "VimFilerExplorer"
-  if exists(":NERDTree")
+nnoremap <Leader>s :echo hello world<CR>
+" Quick write session with F2
+nnoremap <F2> :call MakeSession()<CR>
+" And load session with F3
+nnoremap <F3> :execute "silent! source ~/.nvim_session"\|echo "Loaded ~/.nvim_session."<CR>
+" Reload vimrc and refresh all buffers
+nnoremap <F5> :so $MYVIMRC\|bufdo e<CR>
+function! MakeSession()
+  if IsNerdTreeEnabled()
+    execute "NERDTreeClose"
+    execute "mksession! ~/.nvim_session"
+    execute "NERDTreeToggle"
+    execute "wincmd p"
+  elseif IsNerdTreeFocused()
+    execute "NERDTreeClose"
+    execute "mksession! ~/.nvim_session"
     execute "NERDTreeToggle"
   else
-    echo 'Nothing VimFiler and NERDTree were not loaded!'
+    execute "mksession! ~/.nvim_session"
+  endif
+  echo "Created new session at ~/.nvim_session. To load session press <F3>."
+endfunction
+
+"" plugin remaps
+nnoremap <C-\> :call HandleTree()<CR>
+function! IsNerdTreeEnabled()
+  return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+endfunction
+function! IsNerdTreeFocused()
+  return exists('t:NERDTreeBufName') && bufname("") == t:NERDTreeBufName
+endfunction
+
+function! HandleTree()
+  if IsNerdTreeFocused()
+    execute "NERDTreeClose"
+  elseif IsNerdTreeEnabled()
+    execute "NERDTreeFocus"
+  else
+    execute "NERDTreeToggle"
+    "echo 'Nothing VimFiler and NERDTree were not loaded!'
     "execute "Lexplore \<bar> vertical resize 30"
   endif
 endfunction
