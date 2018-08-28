@@ -4,8 +4,7 @@ let mapleader=","
 nmap \ ,
 nnoremap ; :
 " copy paste shortcuts from system clipboard
-noremap <Leader>p "*p
-noremap <Leader>P "*p
+noremap <Leader>v "*p
 noremap <Leader>y "*y<CR>
 
 " tab and buffer nav
