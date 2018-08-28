@@ -1,6 +1,7 @@
 " define plugins
 "let s:plugins_depends = [ 'Shougo/unite.vim' ]
 let s:plugins = [
+  \'junegunn/limelight.vim',
   \'sheerun/vim-polyglot',
   \'prettier/vim-prettier',
   \'ayu-theme/ayu-vim',
@@ -58,6 +59,8 @@ let g:deoplete#enable_at_startup = 1
 let ayucolor="mirage"
 
 " prettier
+" map function
+nnoremap <Leader>f :PrettierAsync<CR>
 " disable autoformat
 let g:prettier#autoformat = 0
 

@@ -4,13 +4,13 @@ let mapleader=","
 nmap \ ,
 nnoremap ; :
 " copy paste shortcuts from system clipboard
-noremap <Leader>v "*p
+noremap <Leader>p "*p
 noremap <Leader>y "*y<CR>
 
 " tab and buffer nav
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
+"nnoremap <C-S-tab> :tabprevious<CR>
+"nnoremap <C-tab>   :tabnext<CR>
+"nnoremap <C-t>     :tabnew<CR>
 nnoremap <S-Tab>   :bprevious<CR>
 nnoremap <Tab>     :bnext<CR>
 
@@ -21,7 +21,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " close current buffer
-nnoremap <C-W> :bdelete<CR>
+"nnoremap <C-W> :bdelete<CR>
 " close all but current buffer
 nnoremap <Leader>w :%bdelete\|e#<CR>
 
