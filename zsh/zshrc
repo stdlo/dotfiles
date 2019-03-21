@@ -112,4 +112,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias dc="docker-compose"
+alias dm="docker-machine"
+alias dm-unset="eval $(docker-machine env --unset)"
 eval $(thefuck --alias)

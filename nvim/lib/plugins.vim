@@ -4,6 +4,7 @@ let s:plugins = [
   \'junegunn/limelight.vim',
   \'sheerun/vim-polyglot',
   \'prettier/vim-prettier',
+  \'Chiel92/vim-autoformat',
   \'ayu-theme/ayu-vim',
   \'airblade/vim-gitgutter',
   \'itchyny/lightline.vim',
@@ -61,6 +62,11 @@ let ayucolor="mirage"
 " prettier
 " map function
 nnoremap <Leader>f :PrettierAsync<CR>
+noremap <F3> :Autoformat<CR>
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+
 " disable autoformat
 let g:prettier#autoformat = 0
 
