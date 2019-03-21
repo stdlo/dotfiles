@@ -1,105 +1,110 @@
-" define plugins
-"let s:plugins_depends = [ 'Shougo/unite.vim' ]
-let s:plugins = [
-  \'junegunn/limelight.vim',
-  \'sheerun/vim-polyglot',
-  \'prettier/vim-prettier',
-  \'Chiel92/vim-autoformat',
-  \'ayu-theme/ayu-vim',
-  \'airblade/vim-gitgutter',
-  \'itchyny/lightline.vim',
-  \'itchyny/vim-gitbranch',
-  \'scrooloose/nerdtree',
-  \'tiagofumo/vim-nerdtree-syntax-highlight',
-  \'Xuyuanp/nerdtree-git-plugin',
-  \'roxma/nvim-yarp',
-  \'roxma/vim-hug-neovim-rpc',
-  \'wokalski/autocomplete-flow',
-  \'Shougo/deoplete.nvim'
-\]
+"" enable plug and install plugins
+" https://github.com/junegunn/vim-plug/wiki/tutorial#setting-up
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete helper
+Plug 'Shougo/neco-syntax'
+
+Plug 'sheerun/vim-polyglot'
+Plug 'Chiel92/vim-autoformat'
+Plug 'ayu-theme/ayu-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
+Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'wokalski/autocomplete-flow' " snippets 
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
+  "Plug 'roxma/nvim-yarp'
+  "Plug 'roxma/vim-hug-neovim-rpc' " not sure what this is
+
 "" Disabled plugins
-"\'ryanoasis/vim-devicons',
-"\'vim-airline/vim-airline',
-"\'janko-m/vim-test',
-"\'vim-airline/vim-airline-themes',
-"\'qpkorr/vim-bufkill',
-"\'tpope/vim-unimpaired',
-"\'tpope/vim-sensible',
+"Plug 'OmniSharp/omnisharp-vim'
+"Plug 'junegunn/limelight.vim'
+"Plug 'prettier/vim-prettier'
+"Plug 'ryanoasis/vim-devicons'
+"Plug 'vim-airline/vim-airline'
+"Plug 'janko-m/vim-test'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'qpkorr/vim-bufkill'
+"Plug 'tpope/vim-unimpaired'
+"Plug 'tpope/vim-sensible'
 
-"" enable dein.vim and install plugins
-set runtimepath+=~/.config/nvim/lib/dein.vim
-let s:plugin_dir = expand('~/.config/nvim/lib/plugins')
-if dein#load_state(s:plugin_dir)
-  call dein#begin(s:plugin_dir)
-
-  " install dependencies
-  "for p in s:plugins_depends
-    "call dein#add(p)
-  "endfor
-
-  " install plugins
-  for p in s:plugins
-    call dein#add(p)
-  endfor
-
-  " end and perform install
-  " if new plugins exist
-  call dein#end()
-  call dein#save_state()
-  if dein#check_install()
-    call dein#install()
-  endif
-endif
+call plug#end()
 
 "" Plugin Config
 
-" enable deoplete
+"" deoplete
 let g:deoplete#enable_at_startup = 1
 
-" ayu
+" <TAB>: completion.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ deoplete#manual_complete()
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" <S-TAB>: completion back.
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
+
+inoremap <expr><C-g>       deoplete#refresh()
+inoremap <expr><C-e>       deoplete#cancel_popup()
+inoremap <silent><expr><C-l>       deoplete#complete_common_string()
+
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+  return pumvisible() ? deoplete#close_popup()."\<CR>" : "\<CR>"
+endfunction
+
+"" ayu
 let ayucolor="mirage"
 
-" prettier
-" map function
-nnoremap <Leader>f :PrettierAsync<CR>
-noremap <F3> :Autoformat<CR>
+"" autoformat
+nnoremap <Leader>f :Autoformat<CR>
+
+" disable built-in autoformat
+let g:prettier#autoformat = 0
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
+"" end autoformat
 
-" disable autoformat
-let g:prettier#autoformat = 0
-
-" nerdtree
+"" nerdtree
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 " quit vim if the only window open is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
-" gitgutter
+"" gitgutter
 set signcolumn=yes
 set updatetime=250
 
-" lightline
+"" lightline
 set noshowmode
 set laststatus=2
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
-  \ 'active': {
-  \     'right': [ [ 'gitbranch', 'column' ] ],
-  \     'left': [ [ 'mode', 'paste' ],
-  \               [ 'readonly', 'relativepath'],
-  \               [ 'modified'] ]
-  \ },
-  \ 'inactive': { 'right': [], 'left':  [ [ 'relativepath' ] ] },
-  \ 'component_function': {
-  \     'readonly': 'LightlineReadonly',
-  \     'mode': 'LightlineMode',
-  \     'modified': 'LightlineModified',
-  \     'gitbranch': 'LightlineGitbranch'
-  \ },
-  \ }
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \     'right': [ [ 'gitbranch', 'column' ] ],
+      \     'left': [ [ 'mode', 'paste' ],
+      \               [ 'readonly', 'relativepath'],
+      \               [ 'modified'] ]
+      \ },
+      \ 'inactive': { 'right': [], 'left':  [ [ 'relativepath' ] ] },
+      \ 'component_function': {
+      \     'readonly': 'LightlineReadonly',
+      \     'mode': 'LightlineMode',
+      \     'modified': 'LightlineModified',
+      \     'gitbranch': 'LightlineGitbranch'
+      \ },
+      \ }
 
 function! LightlineReadonly()
   return &readonly && &filetype !~# '\v(help|nerdtree)' ? '!!' : ''

@@ -4,9 +4,6 @@
 [submodule "oh-my-zsh"]
 	path = zsh/plugins/oh-my-zsh
 	url = git@github.com:robbyrussell/oh-my-zsh
-[submodule "nvim/lib/dein.vim"]
-	path = nvim/lib/dein.vim
-	url = git@github.com:Shougo/dein.vim
 [submodule "i3blocks/i3blocks-contrib"]
 	path = i3blocks/i3blocks-contrib
 	url = git@github.com:vivien/i3blocks-contrib
@@ -22,3 +19,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "nvim/lib/vim-plug"]
+	path = nvim/lib/vim-plug
+	url = https://github.com/junegunn/vim-plug
