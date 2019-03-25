@@ -10,6 +10,9 @@
     - [neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability.
         - [Minimalist](https://github.com/dikiaap/minimalist) - A Material Colorscheme Darker for Vim and inspired by Material Theme.
         - [vim-airline](https://github.com/vim-airline/vim-airline) - Lean and mean status/tabline for Vim that's light as air.
+        - [vim-autoformat](https://github.com/Chiel92/vim-autoformat) - Format a number of different languages.
+          - [prettier](https://prettier.io/) - Javascript formatter dependency.
+          - [astyle](http://astyle.sourceforge.net/) - C/C++ C# formatter dependency.
         - [More config](https://github.com/loganbickmore/dotfiles/blob/master/nvim/init.vim).
     - [htop](https://github.com/hishamhm/htop) - An interactive text-mode process viewer.
     - [wget](https://www.gnu.org/software/wget/) - A free software package for retrieving files using HTTP, HTTPS, FTP, and FTPS.
