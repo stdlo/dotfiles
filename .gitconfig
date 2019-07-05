@@ -1,0 +1,29 @@
+[color]
+	status = always
+[alias]
+    co = checkout
+    cob = checkout -b
+	br = branch
+    cm = commit
+    st = status
+    fo = fetch origin
+    untag = "!f() { git push --delete origin $1; git tag --delete $1; }; f"
+    compare = rev-list --left-right --count
+	unstage = reset HEAD --
+	hist = log --oneline --abbrev-commit --all --graph --decorate=short --color
+    last = ! git -c color.ui=always show --stat --oneline HEAD^ | cat
+    # drop all current changes
+    stall = stash save -k -u "STASHALL"
+    rtstall = stash apply stash^{/STASHALL}
+    # https://haacked.com/archive/2014/07/28/github-flow-aliases/
+    ec = config --global -e
+    cma = ! git add -A && git commit -m
+    save = ! git add -A && git commit -m 'QUICKSAVE'
+    undo = reset HEAD~1 --mixed
+    amend = commit -a --amend
+    amendq = commit -a --amend --no-edit
+    pl = ! git pull --rebase --prune $@ && git submodule update --init --recursive
+    # alias' that work in tandom to cleanup merged branches
+    bclean = "! f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+    bdone = "! f() { git checkout ${1-master} && git pl && git bclean ${1-master}; }; f"
+
