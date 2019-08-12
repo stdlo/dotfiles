@@ -17,6 +17,8 @@
     rtstall = stash apply stash^{/STASHALL}
     # https://haacked.com/archive/2014/07/28/github-flow-aliases/
     ec = config --global -e
+    ecl = config --local -e
+    eci = ! git config --file ~/dotfiles/gitconfig -e
     cma = ! git add -A && git commit -m
     save = ! git add -A && git commit -m 'QUICKSAVE'
     undo = reset HEAD~1 --mixed
