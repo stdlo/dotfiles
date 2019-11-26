@@ -1,9 +1,10 @@
 "" enable plug and install plugins
 " https://github.com/junegunn/vim-plug/wiki/tutorial#setting-up
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete helper
-Plug 'Shougo/neco-syntax'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete helper
+"Plug 'Shougo/neco-syntax'
 
+Plug 'JuliaEditorSupport/julia-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ayu-theme/ayu-vim'
@@ -14,9 +15,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plug 'wokalski/autocomplete-flow' " snippets 
-  Plug 'Shougo/neosnippet'
-  Plug 'Shougo/neosnippet-snippets'
+"Plug 'wokalski/autocomplete-flow' " snippets 
+"Plug 'Shougo/neosnippet'
+"Plug 'Shougo/neosnippet-snippets'
   "Plug 'roxma/nvim-yarp'
   "Plug 'roxma/vim-hug-neovim-rpc' " not sure what this is
 
@@ -37,13 +38,13 @@ call plug#end()
 "" Plugin Config
 
 "" deoplete
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 
 " <TAB>: completion.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ deoplete#manual_complete()
+"inoremap <silent><expr> <TAB>
+      "\ pumvisible() ? "\<C-n>" :
+      "\ <SID>check_back_space() ? "\<TAB>" :
+      "\ deoplete#manual_complete()
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
