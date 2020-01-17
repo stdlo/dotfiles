@@ -20,6 +20,7 @@
     ecl = config --local -e
     eci = ! git config --file ~/dotfiles/gitconfig -e
     cma = ! git add -A && git commit -m
+    cmq = ! git commit -m \"$(git status --porcelain)\"
     save = ! git add -A && git commit -m 'QUICKSAVE'
     undo = reset HEAD~1 --mixed
     amend = commit -a --amend
