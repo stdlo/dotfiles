@@ -1,0 +1,9 @@
+- link:
+    ~/.ptpython/config.py:
+      if: '[ $(uname) == "Linux" ]'
+      path: ptpython.config.py
+
+    "~/Library/Application Support/ptpython/config.py":
+      if: '[ `uname` = Darwin ]'
+      path: ptpython.config.py
+
