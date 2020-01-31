@@ -113,11 +113,11 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="${EDITOR}"
+alias py="ptpython"
 alias dc="docker-compose"
-alias dm="docker-machine"
-alias dm-unset="eval $(docker-machine env --unset)"
 ## global uniq using awk.
 alias guniq="awk '!seen[\$1]++'"
 ## git diff outside of git. alternative to diff | colordiff
-gdiff() { git --no-pager diff --no-index "\$@" } # ex: gdiff --color-words file1 file2
+alias gdiff="git --no-pager diff --no-index"
+
 eval $(thefuck --alias)
