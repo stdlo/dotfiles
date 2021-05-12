@@ -14,6 +14,7 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'karb94/neoscroll.nvim'
 
 "Plug 'wokalski/autocomplete-flow' " snippets 
 "Plug 'Shougo/neosnippet'
@@ -124,3 +125,8 @@ endfunction
 function! LightlineModified()
   return &filetype =~# '\v(help|nerdtree)' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
+
+"" neoscroll
+if has('nvim-0.5')
+  lua require('neoscroll').setup()
+endif
