@@ -4,25 +4,19 @@ call plug#begin('~/.local/share/nvim/plugged')
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete helper
 "Plug 'Shougo/neco-syntax'
 
-Plug 'JuliaEditorSupport/julia-vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'Chiel92/vim-autoformat'
 Plug 'Luxed/ayu-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'johnstef99/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'karb94/neoscroll.nvim'
-
-"Plug 'wokalski/autocomplete-flow' " snippets 
-"Plug 'Shougo/neosnippet'
-"Plug 'Shougo/neosnippet-snippets'
-  "Plug 'roxma/nvim-yarp'
-  "Plug 'roxma/vim-hug-neovim-rpc' " not sure what this is
 
 "" Disabled plugins
+"Plug 'JuliaEditorSupport/julia-vim'
+"Plug 'Chiel92/vim-autoformat'
+"Plug 'karb94/neoscroll.nvim'
 "Plug 'OmniSharp/omnisharp-vim'
 "Plug 'junegunn/limelight.vim'
 "Plug 'prettier/vim-prettier'
@@ -33,6 +27,13 @@ Plug 'karb94/neoscroll.nvim'
 "Plug 'qpkorr/vim-bufkill'
 "Plug 'tpope/vim-unimpaired'
 "Plug 'tpope/vim-sensible'
+"
+"Plug 'wokalski/autocomplete-flow' " snippets 
+"Plug 'Shougo/neosnippet'
+"Plug 'Shougo/neosnippet-snippets'
+  "Plug 'roxma/nvim-yarp'
+  "Plug 'roxma/vim-hug-neovim-rpc' " not sure what this is
+
 
 call plug#end()
 
@@ -69,8 +70,8 @@ endfunction
 let ayucolor="mirage" " for mirage version of theme
 "let ayucolor="dark"   " for dark version of theme
 
-"" autoformat
-nnoremap <Leader>f :Autoformat<CR>
+"" autoformat (disabled)
+"nnoremap <Leader>f :Autoformat<CR>
 
 " disable built-in autoformat
 let g:prettier#autoformat = 0
@@ -126,7 +127,7 @@ function! LightlineModified()
   return &filetype =~# '\v(help|nerdtree)' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
 
-"" neoscroll
-if has('nvim-0.5')
-  lua require('neoscroll').setup()
-endif
+"" neoscroll (disabled)
+"if has('nvim-0.5')
+"  lua require('neoscroll').setup()
+"endif
