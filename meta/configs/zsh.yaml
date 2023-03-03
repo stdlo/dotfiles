@@ -1,4 +1,6 @@
 - link:
-    ~/.zshrc: zsh/zshrc
+    ~/.zshrc:
+      force: true
+      path: zsh/zshrc
     ~/.oh-my-zsh:
         path: zsh/plugins/oh-my-zsh/
