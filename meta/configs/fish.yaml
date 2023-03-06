@@ -1,0 +1,3 @@
+- link:
+    ~/.config/fish:
+        path: fish/
