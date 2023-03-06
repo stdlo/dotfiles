@@ -1,2 +1,2 @@
-alias vi="$EDITOR"
+alias vi="nvim"
 alias ls="exa"
