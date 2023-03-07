@@ -2,7 +2,8 @@
 
 ## Quickstart
 ```sh
-brew install exa fish fisher fnm neovim starship tealdear thefuck tmux wget
+brew install exa fish fisher fnm neovim starship tealdeer thefuck tmux wget
+./install-config fish nvim starship tmux
 ```
 
 ## Details
