@@ -5,3 +5,4 @@ end
 
 starship init fish | source
 thefuck --alias | source
+fnm env --use-on-cd | source

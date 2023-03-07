@@ -2,8 +2,7 @@ format = """
 $character\
 $directory\
 $git_branch\
-${custom.tiny_git_status}\
-$git_status\
+(${custom.tiny_git_status}$git_status )\
 """
 
 add_newline = false
@@ -30,7 +29,7 @@ shell = [ 'bash' ]
 when = 'test -n "$(git status --porcelain)"'
 
 [git_status]
-format = '[$ahead_behind]($style) '
+format = '[$ahead_behind]($style)'
 style = "yellow bold"
 ahead = '⇡${count}'
 diverged = '⇕⇡${ahead_count}⇣${behind_count}'
