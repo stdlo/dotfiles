@@ -2,8 +2,9 @@
 
 ## Quickstart
 ```sh
-brew install exa fish fisher neovim starship tealdear thefuck tmux wget
+brew install exa fish fisher fnm neovim starship tealdear thefuck tmux wget
 ```
+
 ## Details
 - CLI
     - [dotbot](https://github.com/anishathalye/dotbot) - A tool that bootstraps your dotfiles.
