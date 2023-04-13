@@ -1,2 +1,4 @@
 - link:
-    ~/Library/Preferences/com.googlecode.iterm2.plist: terminal/iterm2.plist
+    ~/Library/Preferences/com.googlecode.iterm2.plist:
+        force: true
+        path: terminal/iterm2.plist

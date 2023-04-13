@@ -3,10 +3,10 @@
 	url = https://github.com/anishathalye/dotbot
 [submodule "oh-my-zsh"]
 	path = zsh/plugins/oh-my-zsh
-	url = git@github.com:robbyrussell/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
 [submodule "i3blocks/i3blocks-contrib"]
 	path = i3blocks/i3blocks-contrib
-	url = git@github.com:vivien/i3blocks-contrib
+	url = https://github.com/vivien/i3blocks-contrib
 [submodule "meta/dotbot"]
 	path = meta/dotbot
 	url = https://github.com/anishathalye/dotbot.git

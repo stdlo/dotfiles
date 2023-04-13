@@ -8,5 +8,6 @@ switch (uname -a)
     case "Linux*"
         set -gx PATH /home/linuxbrew/.linuxbrew/bin $PATH
     case "Darwin*"
+	set -gx PATH /opt/homebrew/bin $PATH
     case '*'
 end
