@@ -1,0 +1,16 @@
+set -gx EDITOR nvim
+
+# path setup
+set -gx PATH /usr/local/bin $PATH
+set -gx PATH $HOME/.local/bin $PATH
+{{- if eq .chezmoi.os "linux" }}
+# linux homebrew path
+set -gx PATH /home/linuxbrew/.linuxbrew/bin $PATH
+{{- else if (and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64" )) }}
+# apple silicon homebrew path
+set -gx PATH /opt/homebrew/bin $PATH
+{{- end }}
+
+{{- if (mustRegexMatch "^.*microsoft.*$" (get .chezmoi.kernel "osrelease")) }}
+set -gx BROWSER wslview
+{{- end }}

@@ -1,0 +1,36 @@
+[user]
+    name = {{ .git.name | quote }}
+    email = {{ .git.email | quote }}
+
+[color]
+	status = always
+
+[pull]
+	rebase = false
+
+[alias]
+    co = checkout
+    cob = checkout -b
+	br = branch
+    cm = commit
+    st = status
+    #fo = fetch origin
+    untag = "!f() { git push --delete origin $1; git tag --delete $1; }; f"
+    #compare = rev-list --left-right --count
+	unstage = reset HEAD --
+	hist = log --oneline --abbrev-commit --all --graph --decorate=short --color
+    ec = config --global -e
+    ecl = config --local -e
+    eci = ! git config --file ~/dotfiles/gitconfig -e
+    cma = ! git add -A && git commit -m
+    cmq = ! git commit -m \"$(git status --porcelain)\"
+    #save = ! git add -A && git commit -m 'QUICKSAVE'
+    undo = reset HEAD~1 --mixed
+    amend = commit -a --amend
+    amendq = commit -a --amend --no-edit
+    #pl = ! git pull --rebase --prune $@ && git submodule update --init --recursive
+    # alias' that work in tandom to cleanup merged branches
+    #bclean = "! f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+    #bdone = "! f() { git checkout ${1-master} && git pl && git bclean ${1-master}; }; f"
+
+

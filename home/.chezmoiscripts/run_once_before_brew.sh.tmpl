@@ -1,0 +1,62 @@
+#!/bin/sh
+{{- $brew := "" }}
+{{- if eq .chezmoi.os "darwin" }}
+{{-   if eq .chezmoi.arch "arm64" }}
+{{-     $brew = "/opt/homebrew/bin/brew" }}
+{{-   else }}
+{{-     $brew = "/usr/local/bin/brew" }}
+{{-   end }}
+{{- else if eq .chezmoi.os "linux" }}
+{{-   $brew = "/home/linuxbrew/.linuxbrew/bin/brew" }}
+{{- end }}
+
+{{- if not (stat $brew) }}
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+{{- end }}
+
+{{ $brews := list
+     "ansifilter"
+     "bat"
+     "colordiff"
+     "exa"
+     "fd"
+     "fish"
+     "fisher"
+     "fnm"
+     "gh"
+     "go"
+     "gomplate"
+     "helm"
+     "inetutils"
+     "jq"
+     "kind"
+     "navi"
+     "neovim"
+     "nmap"
+     "reattach-to-user-namespace"
+     "sd"
+     "sponge"
+     "starship"
+     "tealdeer"
+     "thefuck"
+     "tmux"
+     "wget"
+     "yq"
+     "lindell/multi-gitter/multi-gitter" -}}
+{{ $casks := list
+     "docker" -}}
+
+
+{{- if not (mustRegexMatch "^.*microsoft.*$" (get .chezmoi.kernel "osrelease")) }}
+{{  $casks = concat $casks (list
+     "kitty") -}}
+{{ end -}}
+
+{{ $brew }} bundle --no-lock --file=/dev/stdin <<EOF
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+{{ range ($casks | sortAlpha | uniq) -}}
+cask "{{ . }}"
+{{ end -}}
+EOF
