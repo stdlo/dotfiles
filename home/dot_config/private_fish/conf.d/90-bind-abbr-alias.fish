@@ -1,12 +1,12 @@
 # aliases
-alias vi="nvim"
 alias ls="exa"
 
 
 # abbreviations
+abbr vi $EDITOR
 ## common commands
-abbr py "ptpython"
-abbr dc "docker-compose"
+#abbr py "ptpython"
+#abbr dc "docker-compose"
 ## kubernetes
 abbr k kubectl
 abbr kconf kubectl config

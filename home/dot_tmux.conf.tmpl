@@ -1,6 +1,5 @@
 # .tmux.conf
 
-
 # vim copy to system clipboard
 #if-shell '[[ $(uname -s) = Linux ]]' { 
    #bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -in -selection clipboard" 
@@ -19,25 +18,15 @@ bind-key 'C-Space' send-prefix
 # enable mouse mode
 set -g mouse on
 
-# Disable wait tim for escape key presses
+# Disable wait time for escape key presses
 # https://www.johnhawthorn.com/2012/09/vi-escape-delays/
 # https://unix.stackexchange.com/a/25638
 set -s escape-time 0
 
-## --- Attempts to fix tmux inside of vscode --- ##
-## "Fix" osx issues for vscode with tmux, among others.
-## https://github.com/microsoft/vscode/issues/24112#issuecomment-336672556
-#set -g default-command "reattach-to-user-namespace -l $SHELL"
-#set -g set-clipboard on
-## https://tmux-plugins.github.io/tmux-yank/
-#set -g @plugin 'tmux-plugins/tmux-yank'
-#set -g @plugin 'tmux-plugins/tmux-sensible'
-## ------ ##
-
 # enabe proper terminal colors in vim through tmux
 # https://www.reddit.com/r/vim/comments/5416d0/true_colors_in_vim_under_tmux/
-set -g default-terminal 'screen-256color'
-set -ga terminal-overrides ',xterm-256color:Tc'
+#set -g default-terminal 'screen-256color'
+#set -ga terminal-overrides ',xterm-256color:Tc'
 
 # don't rename automatically
 set-option -g allow-rename off
@@ -85,7 +74,7 @@ set-option -g visual-silence off
 set-window-option -g monitor-activity off
 set-option -g bell-action none
 
-set -g default-terminal "screen-256color"
+#set -g default-terminal "screen-256color"
 
 # The modes {
 setw -g clock-mode-colour colour135
@@ -109,12 +98,12 @@ set -g status-left ''
 
 {{- if eq .chezmoi.os "darwin" }}
 # macos status
-set -g status-right "#[fg=colour138]%A %b %d %-I:%M #[fg=colour250,bg=colour238] #(whoami)@#(ifconfig en0 | grep 'inet ' | awk '{print \$2}') #[bg=colour000]"
+#set -g status-right "#[fg=colour138]%A %b %d %-I:%M #[fg=colour250,bg=colour238] #(whoami)@#(ifconfig en0 | grep 'inet ' | awk '{print \$2}') #[bg=colour000]"
 {{- else }} 
 # linux status
-set -g status-right "#[fg=colour138]%A %b %d %-I:%M #[fg=colour250,bg=colour238] #(whoami)@#(echo \"\$(ifconfig en0 || ifconfig eth0)\" | grep 'inet ' | awk '{print \$2}') #[bg=colour000]"
+#set -g status-right "#[fg=colour138]%A %b %d %-I:%M #[fg=colour250,bg=colour238] #(whoami)@#(echo \"\$(ifconfig en0 || ifconfig eth0)\" | grep 'inet ' | awk '{print \$2}') #[bg=colour000]"
 {{- end }}
-
+set -g status-right "#[fg=colour138]%A %b %d %-I:%M #[fg=colour250,bg=colour238]"
 set -g status-right-length 50
 set -g status-left-length 20
 

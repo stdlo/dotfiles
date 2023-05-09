@@ -12,6 +12,7 @@ Plug 'itchyny/vim-gitbranch'
 Plug 'scrooloose/nerdtree'
 Plug 'johnstef99/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'sbdchd/neoformat'
 
 "" Disabled plugins
 "Plug 'JuliaEditorSupport/julia-vim'
@@ -71,7 +72,8 @@ let ayucolor="mirage" " for mirage version of theme
 "let ayucolor="dark"   " for dark version of theme
 
 "" autoformat (disabled)
-"nnoremap <Leader>f :Autoformat<CR>
+nnoremap <Leader>f :Neoformat<CR>
+let g:neoformat_try_node_exe = 1
 
 " disable built-in autoformat
 let g:prettier#autoformat = 0

@@ -34,3 +34,7 @@ colorscheme ayu
 " Filetype fix for tmpl
 au BufRead,BufNewFile *.sh.tmpl    setlocal filetype=sh
 au BufRead,BufNewFile *.conf.tmpl  setlocal filetype=conf
+
+" dont auto indent on #
+set cindent cinkeys-=0#
+

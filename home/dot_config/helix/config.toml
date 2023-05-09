@@ -1,6 +1,8 @@
 # theme = "ayu_mirage"
 # theme = "pop-dark"
-theme = "sonokai"
+# ayu_mirage colors dont seem right, heres some default ones i liked
+# varua, penumbra+, everforest_dark, monokai_pro_ristretto
+theme = "everforest_dark"
 
 [editor]
 true-color = true
