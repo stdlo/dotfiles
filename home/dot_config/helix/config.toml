@@ -30,9 +30,6 @@ c = "toggle_comments"
 G = "goto_file_end"
 [keys.insert]
 "C-c" = "normal_mode"
-0 = "goto_line_start"
-"$" = "goto_line_end"
-G = "goto_file_end"
 [keys.select]
 "C-c" = "normal_mode"
 0 = "goto_line_start"
