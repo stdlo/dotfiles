@@ -22,11 +22,12 @@ c = "toggle_comments"
 "\\" = "toggle_comments"
 
 [keys.normal]
-"C-\\" = "toggle_comments" # broken on wsl
+# "C-\\" = "toggle_comments" # broken on wsl
 # {{ vim muscle memory
+"$" = "goto_line_end"
 "C-c" = "no_op"
 0 = "goto_line_start"
-"$" = "goto_line_end"
+D = ["collapse_selection", "extend_to_line_end", "yank", "flip_selections", "delete_selection"]
 G = "goto_file_end"
 [keys.insert]
 "C-c" = "normal_mode"

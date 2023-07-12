@@ -1,36 +1,29 @@
 # .tmux.conf
+set-option -sa terminal-overrides ",xterm*:Tc"
+set -g mouse on
 
-# vim copy to system clipboard
-#if-shell '[[ $(uname -s) = Linux ]]' { 
-   #bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -in -selection clipboard" 
-   #set-option -g default-shell /usr/local/bin/fish
-#} { 
-   #bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy" 
-#}
+# open panes in cwd
+bind '"' split-window -v -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
 
 # set Ctrl+Space as tmux prefix instead of Ctrl+b
-# https://superuser.com/a/271791/641153
-unbind-key C-b
-unbind-key C-Space
-set -g prefix 'C-Space'
-bind-key 'C-Space' send-prefix
+unbind C-b
+set -g prefix C-Space
+bind C-Space send-prefix
 
-# enable mouse mode
-set -g mouse on
+# Vim style pane selection
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
 
 # Disable wait time for escape key presses
 # https://www.johnhawthorn.com/2012/09/vi-escape-delays/
 # https://unix.stackexchange.com/a/25638
 set -s escape-time 0
 
-# enabe proper terminal colors in vim through tmux
-# https://www.reddit.com/r/vim/comments/5416d0/true_colors_in_vim_under_tmux/
-#set -g default-terminal 'screen-256color'
-#set -ga terminal-overrides ',xterm-256color:Tc'
-
 # don't rename automatically
 set-option -g allow-rename off
-
 
 # From https://github.com/Parth/dotfiles/blob/master/tmux/tmux.conf
 # http://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
@@ -95,15 +88,7 @@ set -g status-position bottom
 set -g status-style bg=colour234,fg=colour137,dim
 set -g status-left ''
 #set -g status-right '#[fg=colour233,bg=colour245,bold] %A %b %d %-I:%M #[fg=colour255,bg=colour000] #(whoami)@#H'
-
-{{- if eq .chezmoi.os "darwin" }}
-# macos status
-#set -g status-right "#[fg=colour138]%A %b %d %-I:%M #[fg=colour250,bg=colour238] #(whoami)@#(ifconfig en0 | grep 'inet ' | awk '{print \$2}') #[bg=colour000]"
-{{- else }} 
-# linux status
-#set -g status-right "#[fg=colour138]%A %b %d %-I:%M #[fg=colour250,bg=colour238] #(whoami)@#(echo \"\$(ifconfig en0 || ifconfig eth0)\" | grep 'inet ' | awk '{print \$2}') #[bg=colour000]"
-{{- end }}
-set -g status-right "#[fg=colour138]%A %b %d %-I:%M #[fg=colour250,bg=colour238]"
+set -g status-right "#{prefix_highlight} #[fg=colour138]%A %b %d %-I:%M #[fg=colour250,bg=colour238]"
 set -g status-right-length 50
 set -g status-left-length 20
 
@@ -128,6 +113,7 @@ set -g @continuum-restore 'on'
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @pluging 'tmux-plugins/tmux-prefix-highlight'
 
 run '~/.tmux/plugins/tpm/tpm'
 

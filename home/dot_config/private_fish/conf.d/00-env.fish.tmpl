@@ -1,18 +1,21 @@
 set -gx EDITOR hx
 
 # path setup
-set -gx PATH /usr/local/bin $PATH
-set -gx PATH $HOME/.local/bin $PATH
+set -gx PATH $PATH /usr/local/bin
+set -gx PATH $PATH $HOME/.local/bin
 {{- if eq .chezmoi.os "linux" }}
 # linux homebrew path
-set -gx PATH /home/linuxbrew/.linuxbrew/bin $PATH
+set -gx PATH $PATH /home/linuxbrew/.linuxbrew/bin
 {{- else if (and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64" )) }}
 # apple silicon homebrew path
-set -gx PATH /opt/homebrew/bin $PATH
+set -gx PATH $PATH /opt/homebrew/bin
 {{- end }}
 
 # rustup path config
-set -gx PATH $HOME/.cargo/bin $PATH
+set -gx PATH $PATH $HOME/.cargo/bin
+
+# krew path config
+set -gx PATH $PATH $HOME/.krew/bin
 
 {{- if (mustRegexMatch "^.*microsoft.*$" (get .chezmoi.kernel "osrelease")) }}
 set -gx BROWSER wslview
