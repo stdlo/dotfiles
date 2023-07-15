@@ -10,13 +10,36 @@ set -gx PATH $PATH /home/linuxbrew/.linuxbrew/bin
 # apple silicon homebrew path
 set -gx PATH $PATH /opt/homebrew/bin
 {{- end }}
-
-# rustup path config
 set -gx PATH $PATH $HOME/.cargo/bin
-
-# krew path config
 set -gx PATH $PATH $HOME/.krew/bin
-
 {{- if (mustRegexMatch "^.*microsoft.*$" (get .chezmoi.kernel "osrelease")) }}
 set -gx BROWSER wslview
 {{- end }}
+
+# aliases
+alias ls="exa"
+
+# abbreviations
+abbr vi $EDITOR
+abbr k kubectl
+abbr kconf kubectl config
+
+abbr cm chezmoi
+abbr cma chezmoi add
+abbr cmap chezmoi apply
+abbr cmd chezmoi diff
+abbr cme chezmoi edit
+abbr cmg chezmoi git
+abbr cmu chezmoi update
+
+# get unique with awk
+abbr guniq "awk '!seen[\$1]++'"
+
+# git diff but outside of git repos
+abbr gdiff "git --no-pager diff --no-index"
+
+if status is-interactive
+    starship init fish | source
+    fnm env --use-on-cd | source
+    bind \cX\cE __edit_commandline
+end
