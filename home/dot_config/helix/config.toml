@@ -1,4 +1,4 @@
-theme = "rose_pine_moon" # everforest_dark tokyonight_storm default
+theme = "everforest_dark" # rose_pine_moon tokyonight_storm default
 
 [editor]
 # cursorline = true
