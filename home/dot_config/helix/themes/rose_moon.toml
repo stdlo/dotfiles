@@ -3,25 +3,27 @@
 # Contributing:
 #   Please submit changes to https://github.com/rose-pine/helix.
 #   The Rosé Pine team will update Helix, including you as a co-author.
+# Based on rose_pine_moon
 
 inherits = "rose_pine"
 
 [palette]
-base           = "#232136" 
-surface        = "#2a273f" 
+base           = "#28253a" # base +2 luminance
+# base           = "#232136" # original
+surface        = "#2e2b44" # surface +2 luminance
+# surface        = "#2a273f" # original
 overlay        = "#393552"
 muted          = "#6e6a86"
 subtle         = "#908caa"
 #text           = "#e0def4" # original
-#text           = "#c6c2eb"
-text           = "#cac6eb"
+text           = "#cac6eb" # i think this is original but down a shade
 love           = "#eb6f92"
 love_10        = "#3a2841"
 gold           = "#f6c177"
 gold_10        = "#39313e"
 rose           = "#ea9a97"
 rose_10        = "#392d41"
-pine        =  "#B1B695"
+pine           = "#9db594" # cambridge blue
 # pine           = "#3e8fb0" # original
 pine_10        = "#252c44"
 foam           = "#9ccfd8"

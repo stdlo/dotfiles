@@ -8,7 +8,8 @@ $git_branch\
 add_newline = false
 
 [directory]
-style = "bold cyan"
+style = "bold blue"
+#style = "bold cyan" # original
 truncation_length=1
 
 [character]
@@ -19,8 +20,8 @@ vimcmd_symbol = "[›](bold purple)"
 
 [git_branch]
 format = "[$branch]($style) "
-style = "bold blue"
-#style = "bright-black"
+style = "bold purple"
+#style = "bold blue" # original
 
 [custom.tiny_git_status]
 format = '[$symbol]($style)'

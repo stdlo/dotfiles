@@ -1,13 +1,11 @@
-theme = "ferra_renew" # rose_pine_moon everforest_dark monokai_pro_ristretto
+theme = "rose_moon"
 
 [editor]
-# cursorline = true
 auto-completion = false
 auto-format = false
 color-modes = true
 line-number = "relative"
 mouse = false
-rulers = [80]
 shell = ["fish", "-c"]
 true-color = true
 
@@ -35,7 +33,7 @@ D = ["collapse_selection", "extend_to_line_end", "yank", "flip_selections", "del
 G = "goto_file_end"
 
 [keys.insert]
-"C-c" = ["normal_mode", "collapse_selection", "keep_primary_selection"]
+"C-c" = "normal_mode"
 
 [keys.select]
 "C-c" = ["normal_mode", "collapse_selection", "keep_primary_selection"]
