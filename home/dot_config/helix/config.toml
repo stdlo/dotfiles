@@ -1,13 +1,14 @@
-theme = "everforest_dark" # rose_pine_moon tokyonight_storm default
+theme = "ferra_renew" # rose_pine_moon everforest_dark monokai_pro_ristretto
 
 [editor]
 # cursorline = true
 auto-completion = false
 auto-format = false
-bufferline = "multiple"
 color-modes = true
 line-number = "relative"
 mouse = false
+rulers = [80]
+shell = ["fish", "-c"]
 true-color = true
 
 [editor.statusline]

@@ -1,0 +1,35 @@
+# Original Author : Casper Rogild Storm <casper@asynkron.xyz>
+
+inherits = "ferra"
+
+# disable italics
+"comment" = { fg = "ferra_bark_light" }
+"markup.italic" = {}
+
+# less distracting cursor and match
+"ui.cursor.match" = { fg = "ferra_ember", bg = "ferra_umber" }
+"ui.cursor" = { fg = "ferra_night", bg = "ferra_blush_dark" }
+
+# jump mode highlighting
+"ui.virtual.jump.single" = { fg = "#ff007c", modifiers = ["bold"] }
+"ui.virtual.jump.multi.first" = { fg = "#00dfff", modifiers = ["bold"] }
+"ui.virtual.jump.multi.rest" = "#2b8db3"
+"ui.virtual.jump.dim" = "#666666"
+
+[palette]
+ferra_night      =  "#2b292d" # original
+#ferra_night      =  "#181616" # kanagawa dragon
+#ferra_night      =  "#232136" # from rose_pine_moon
+#ferra_night      =  "#282A36" # background from dracula
+ferra_ash         =  "#383539"
+ferra_umber       =  "#4d424b"
+ferra_bark        =  "#6f5d63"
+ferra_bark_light  =  "#7d6d72"
+ferra_mist        =  "#d1d1e0"
+ferra_sage        =  "#b1b695"
+ferra_blush       =  "#fecdb2" # original
+ferra_blush_dark  =  "#e4b8a0"
+ferra_coral       =  "#ffa07a"
+ferra_rose        =  "#f6b6c9"
+ferra_ember       =  "#e06b75"
+ferra_honey       =  "#f5d76e"
