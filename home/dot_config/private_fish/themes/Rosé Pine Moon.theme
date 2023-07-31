@@ -9,7 +9,7 @@ fish_color_redirection ea9a97 # rose
 fish_color_end 908caa
 fish_color_error eb6f92
 fish_color_option c4a7e7 # iris
-fish_color_param cac6eb # i think this is original "text" but down a shade
+fish_color_param e0def4 # i think this is original "text" but down a shade
 fish_color_comment 908caa
 fish_color_selection --reverse
 fish_color_operator e0def4

@@ -19,7 +19,7 @@ SETUVAR fish_color_keyword:9ccfd8
 SETUVAR fish_color_normal:e0def4
 SETUVAR fish_color_operator:e0def4
 SETUVAR fish_color_option:c4a7e7
-SETUVAR fish_color_param:cac6eb
+SETUVAR fish_color_param:e0def4
 SETUVAR fish_color_quote:f6c177
 SETUVAR fish_color_redirection:ea9a97
 SETUVAR fish_color_search_match:\x2d\x2dbackground\x3d232136
