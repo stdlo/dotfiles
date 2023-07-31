@@ -8,8 +8,8 @@ $git_branch\
 add_newline = false
 
 [directory]
-# style = "bold blue" # rose pine moon
-style = "bold cyan" # original
+style = "bold blue" # rose pine moon
+# style = "bold cyan" # original
 truncation_length=1
 
 [character]
