@@ -1,6 +1,6 @@
 [user]
-	name = {{ .git.name | quote }}
-	email = {{ .git.email | quote }}
+	name = "stdlo"
+	email = "9201895+stdlo@users.noreply.github.com"
 
 [color]
 	status = always
