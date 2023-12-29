@@ -18,6 +18,7 @@
     undo = reset HEAD~1 --mixed
     amend = commit -a --amend
     amendq = commit -a --amend --no-edit
+    root = rev-parse --show-toplevel
 
 	# less used
 	br = branch

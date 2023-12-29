@@ -40,5 +40,9 @@ abbr gdiff "git --no-pager diff --no-index"
 if status is-interactive
     starship init fish | source
     fnm env --use-on-cd | source
+    atuin init fish | source
     bind \cX\cE __edit_commandline
+    # proto
+    set -gx PROTO_HOME "$HOME/.proto"
+    set -gx PATH "$PROTO_HOME/shims:$PROTO_HOME/bin" $PATH
 end
