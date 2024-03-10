@@ -1,3 +1,4 @@
+# hello nix
 format = """
 $character\
 $directory\

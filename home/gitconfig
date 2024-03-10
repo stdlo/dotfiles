@@ -1,0 +1,30 @@
+[user]
+	name = "stdlo"
+	email = "9201895+stdlo@users.noreply.github.com"
+
+[color]
+	status = always
+
+[pull]
+	rebase = false
+
+[alias]
+  # most used
+  st = status
+  cm = commit
+  co = checkout
+  cob = checkout -b
+  undo = reset HEAD~1 --mixed
+  amend = commit -a --amend
+  amendq = commit -a --amend --no-edit
+  root = rev-parse --show-toplevel
+
+  # less used
+  br = branch
+  untag = "!f() { git push --delete origin $1; git tag --delete $1; }; f"
+  unstage = reset HEAD --
+  hist = log --oneline --abbrev-commit --all --graph --decorate=short --color
+    ec = config --global -e
+    ecl = config --local -e
+    cma = ! git add -A && git commit -m
+    cmq = ! git commit -m \"$(git status --porcelain)\"
