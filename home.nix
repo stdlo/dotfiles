@@ -5,8 +5,10 @@
     username = "lbickmore";
     homeDirectory = "/Users/lbickmore";
     packages = [ 
+      pkgs.git
     ];
   };
+  xdg.enable = true;
   programs.home-manager.enable = true;
   programs.fish = {
     enable = true;
