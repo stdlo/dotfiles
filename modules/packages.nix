@@ -6,27 +6,35 @@
 #
 #   kubectl = pkgs.kubectl;
 # in {
+# removed packages
+    # ansifilter
+    # moreutils #sponge
+    # colordiff
+    # bat
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    ansifilter
+    # core packages
     atuin
-    bat
-    colordiff
+    # babelfish # fenv alternative
+    curl
     eza
     fd
     gh
     jq
-    kubectl
-    kubectx
-    kustomize
     lf
     ripgrep
     sd
-    moreutils #sponge
     starship
     tealdeer
     tmux
+    unixtools.watch
     wget
     yq
+  ] ++ [
+    # work packages
+    fnm
+    kubectl
+    kubectx
+    kustomize
   ];
 }

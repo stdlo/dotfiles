@@ -1,8 +1,12 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: let
+  editor = "nvim";
+in {
+  # fish specific packages
+  home.packages = [ pkgs.babelfish ];
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      set -gx EDITOR nvim
+      set -gx EDITOR ${editor}
 
       set -gx PATH $HOME/.local/bin $PATH
       set -gx PATH $PATH $HOME/.krew/bin
@@ -14,8 +18,8 @@
       atuin init fish | source
       '';
     shellAbbrs = {
-      vi = "$EDITOR";
-      vim = "$EDITOR";
+      vi = "${editor}";
+      vim = "${editor}";
       k = "kubectl";
       kconf = "kubectl config";
       kc = "kubectx";
@@ -26,7 +30,7 @@
       guniq = "awk '!seen[\\$1]++'"; # get unique with awk
       gdiff = "git --no-pager diff --no-index"; # git diff but outside of git repos
     };
-    shellAliases=  {
+    shellAliases =  {
       ls = "eza";
     };
   };
