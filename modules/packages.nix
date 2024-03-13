@@ -6,6 +6,7 @@
     eza
     fd
     gh
+    git
     jq
     lf
     ripgrep
