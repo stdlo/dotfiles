@@ -19,7 +19,9 @@
 
     ## work packages
     fnm
-    kubectl
+    ( if pkgs.stdenv.isDarwin
+      then pkgs.callPackage ./kubectl-1.27.7.nix { }
+      else kubectl )
     kubectx
     kustomize
 
