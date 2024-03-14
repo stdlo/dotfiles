@@ -20,8 +20,18 @@ in {
     #   };
     # in nvim;
   };
+
+  # setup fonts installed in packages
+  fonts.fontconfig.enable = true;
+  home.packages = with pkgs; [ iosevka mononoki sarasa-gothic ];
+
   # xdg.configFile."fish/themes/Catppuccin Latte.theme".source = "${catppuccin-fish}/themes/Catppuccin Latte.theme";
+  # use ~/.config for config files
   xdg.enable = true;
+
+  # enable home manager
   programs.home-manager.enable = true;
+
+  # local imports for fish config and package installations
   imports = [ ./modules/fish.nix ./modules/packages.nix ];
 }
