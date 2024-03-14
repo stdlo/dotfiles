@@ -28,3 +28,12 @@
     ecl = config --local -e
     cma = ! git add -A && git commit -m
     cmq = ! git commit -m \"$(git status --porcelain)\"
+
+[init]
+        defaultBranch = main
+
+[credential "https://github.com"]
+       helper = !gh auth git-credential
+
+[credential "https://gist.github.com"]
+       helper = !gh auth git-credential
