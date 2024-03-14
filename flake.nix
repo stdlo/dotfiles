@@ -18,9 +18,12 @@
   outputs = { nixpkgs, home-manager, ... }: {
     homeConfigurations = {
       "lbickmore" = home-manager.lib.homeManagerConfiguration {
-        # darwin is the macOS kernel and aarch64 means ARM, i.e. apple silicon
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        modules = [ ./home.nix ];
+        modules = [ ./home.nix ./home-darwin.nix ];
+      };
+      "lo" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [ ./home.nix ./home-linux.nix ];
       };
     };
   };
