@@ -10,15 +10,10 @@ in {
     file.".config" = { source = ./home/config; recursive = true; };
     file.".gitconfig" = { source = ./home/gitconfig; };
     file.".tmux.conf" = { source = ./home/tmux.conf; };
-    ## Disabled for now
-    # file.".config/nvim".source = let
-    #   nvim = pkgs.fetchFromGitHub {
-    #     owner = "stdlo";
-    #     repo = "init.lua";
-    #     rev = "main";
-    #     hash = "sha256-/lTUe1blATNwTvGdOaxdcbfndNeWGCsf7PwJ29Rfqys=";
-    #   };
-    # in nvim;
+    file.".tmux/plugins/tpm".source = pkgs.fetchzip {
+      url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz";
+      hash = "sha256-hW8mfwB8F9ZkTQ72WQp/1fy8KL1IIYMZBtZYIwZdMQc=";
+    };
   };
 
   # setup fonts installed in packages

@@ -1,4 +1,3 @@
-# hello nix
 format = """
 $character\
 $directory\
@@ -27,7 +26,7 @@ style = "bold purple" # rose pine moon
 [custom.tiny_git_status]
 format = '[$symbol]($style)'
 style = 'yellow bold'
-symbol = '*' # '✗'
+symbol = '*'
 shell = [ 'bash' ]
 when = 'test -n "$(git status --porcelain)"'
 
@@ -37,7 +36,3 @@ style = "yellow bold"
 ahead = '⇡${count}'
 diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 behind = '⇣${count}'
-
-#[python]
-#format = "[$virtualenv]($style) "
-#style = "bright-black"
