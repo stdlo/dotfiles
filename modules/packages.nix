@@ -9,6 +9,7 @@
     git
     jq
     lf
+    navi
     ripgrep
     sd
     starship
@@ -20,8 +21,9 @@
 
     ## work packages
     fnm
+    ( pkgs.callPackage ./multi-gitter.package.nix { } )
     ( if pkgs.stdenv.isDarwin
-      then pkgs.callPackage ./kubectl-1.27.7.nix { }
+      then pkgs.callPackage ./kubectl.package.nix { }
       else kubectl )
     kubectx
     kustomize
@@ -31,6 +33,5 @@
     # bat
     # colordiff
     # moreutils #sponge
-    # navi
   ];
 }
