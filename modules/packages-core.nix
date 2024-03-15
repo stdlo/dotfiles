@@ -1,9 +1,11 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     atuin
+    bat
     curl
     eza
     fd
+    fzf
     gh
     git
     jq
@@ -20,7 +22,6 @@
 
     ## removed packages
     # ansifilter
-    # bat
     # colordiff
     # moreutils #sponge
   ];

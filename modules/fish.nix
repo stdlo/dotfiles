@@ -12,7 +12,7 @@ in {
       set -gx PATH $PATH $HOME/.krew/bin
 
       # disable interactive mode for kubectx/ns
-      set -gx KUBECTX_IGNORE_FZF 1
+      # set -gx KUBECTX_IGNORE_FZF 1
 
       starship init fish | source
       atuin init fish | source
