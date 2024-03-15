@@ -1,8 +1,8 @@
 format = """
-$character\
 $directory\
 $git_branch\
 (${custom.tiny_git_status}$git_status )\
+$character\
 """
 
 add_newline = false
@@ -10,13 +10,15 @@ add_newline = false
 [directory]
 style = "bold blue" # rose pine moon
 # style = "bold cyan" # original
-truncation_length=1
+truncation_length = 3
+truncate_to_repo = true
+# fish_style_pwd_dir_length = 1
 
 [character]
-# optional symbol ♪
-success_symbol = "[›](bold green)"
-error_symbol = "[›](bold red)"
-vimcmd_symbol = "[›](bold purple)"
+# optional symbol ♪ ›
+success_symbol = "[>](bold green)"
+error_symbol = "[>](bold red)"
+# vimcmd_symbol = "[>](bold purple)"
 
 [git_branch]
 format = "[$branch]($style) "
