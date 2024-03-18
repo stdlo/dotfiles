@@ -10,6 +10,8 @@ in {
 
       set -gx PATH $HOME/.local/bin $PATH
 
+      set -gx FZF_DEFAULT_OPTS_FILE ~/.config/fzfrc
+
       starship init fish | source
       atuin init fish | source
       '';

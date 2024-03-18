@@ -2,10 +2,22 @@ format = """
 $directory\
 $git_branch\
 (${custom.tiny_git_status}$git_status )\
+$kubernetes\
 $character\
 """
 
 add_newline = false
+
+[line_break]
+disabled = true
+
+[kubernetes]
+disabled=false
+format = '[$symbol]($style)'
+contexts = [
+  { context_pattern = "[^p].*", symbol = "" },
+  { context_pattern = "prod", symbol = "\\[prod k8s\\] ", style = "bold red" }
+]
 
 [directory]
 style = "bold blue" # rose pine moon
