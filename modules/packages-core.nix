@@ -17,6 +17,7 @@
     tealdeer
     tmux
     unixtools.watch
+    vivid
     wget
     yq
 
