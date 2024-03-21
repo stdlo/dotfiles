@@ -11,6 +11,7 @@
     jq
     lf
     navi
+    neovim
     ripgrep
     sd
     starship

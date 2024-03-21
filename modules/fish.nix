@@ -8,6 +8,9 @@ in {
     interactiveShellInit = ''
       set -gx EDITOR ${editor}
       set -gx PATH $HOME/.local/bin $PATH
+
+      starship init fish | source
+      atuin init fish --disable-ctrl-r --disable-up-arrow | source
       '';
     shellAbbrs = {
       vi = "${editor}";

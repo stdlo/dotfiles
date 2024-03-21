@@ -14,7 +14,7 @@
 
   # setup fonts installed in packages
   fonts.fontconfig.enable = true;
-  home.packages = with pkgs; [ iosevka mononoki sarasa-gothic ];
+  home.packages = with pkgs; [ iosevka-bin mononoki sarasa-gothic ];
 
   # use ~/.config for config files
   xdg.enable = true;
