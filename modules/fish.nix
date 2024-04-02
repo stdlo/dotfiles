@@ -9,8 +9,9 @@ in {
       set -gx EDITOR ${editor}
       set -gx PATH $HOME/.local/bin $PATH
 
-      starship init fish | source
+      fnm env --use-on-cd --shell=fish | source
       atuin init fish --disable-ctrl-r --disable-up-arrow | source
+      starship init fish | source
       '';
     shellAbbrs = {
       vi = "${editor}";

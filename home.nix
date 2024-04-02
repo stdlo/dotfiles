@@ -20,6 +20,11 @@
   xdg.enable = true;
 
   programs.home-manager.enable = true;
+  # Disabled for now
+  # programs.direnv = {
+  #   enable = true;
+  #   nix-direnv.enable = true;
+  # };
 
   imports = [ ./modules/fish.nix ./modules/packages-core.nix ];
 }

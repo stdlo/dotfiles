@@ -2,7 +2,8 @@
   home.packages = with pkgs; [
     atuin
     bat
-    curl
+    # disabled until https://github.com/NixOS/nixpkgs/issues/299949
+    # curl
     eza
     fd
     fzf
