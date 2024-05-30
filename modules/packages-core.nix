@@ -5,6 +5,7 @@
     # disabled until https://github.com/NixOS/nixpkgs/issues/299949
     # curl
     eza
+    entr
     fd
     fzf
     gh

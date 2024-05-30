@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   name = "kubectl-${version}";
-  version = "1.27.7";
+  version = "1.27.10";
 
   src = fetchurl {
-    url = "https://dl.k8s.io/release/v${version}/bin/darwin/aarch64/kubectl";
-    sha256 = "sha256-PQj9kja6rZ7VAlxzaTRmxgIM+gLioVymwjay6/8IBYI=";
+    url = "https://dl.k8s.io/release/v${version}/bin/darwin/arm64/kubectl";
+    sha256 = "sha256-CWxY0IWboENzmlVFZwAy3iqPIlcfEncdMW3R0/QPEBQ=";
   };
 
   dontUnpack = true;
