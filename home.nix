@@ -2,7 +2,8 @@
 
 {
   home = {
-    stateVersion = "23.11";
+    stateVersion = "25.05";
+    # stateVersion = "23.11";
     file.".config" = { source = ./home/config; recursive = true; };
     file.".gitconfig" = { source = ./home/gitconfig; };
     file.".tmux.conf" = { source = ./home/tmux.conf; };

@@ -12,7 +12,7 @@
     git
     jq
     lf
-    navi
+    moreutils #sponge
     neovim
     ripgrep
     sd
@@ -26,6 +26,6 @@
     ## removed packages
     # ansifilter
     # colordiff
-    # moreutils #sponge
+    # navi
   ];
 }
