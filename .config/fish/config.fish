@@ -28,13 +28,11 @@ status is-interactive; and begin
     set -gx EDITOR nvim
     set -gx PATH $HOME/.local/bin $PATH
 
+    atuin init fish --disable-ctrl-r --disable-up-arrow | source
+    starship init fish | source
+
+    ## nodejs
     if type -q fnm
         fnm env --use-on-cd --shell=fish | source
-    end
-    if type -q atuin
-        atuin init fish --disable-ctrl-r --disable-up-arrow | source
-    end
-    if type -q starship
-        starship init fish | source
     end
 end
