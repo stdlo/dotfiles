@@ -8,6 +8,7 @@ status is-interactive; and begin
     abbr --add -- vim $EDITOR
     abbr --add -- guniq "awk '!seen[\$1]++'" # get unique with awk
     abbr --add -- gdiff "git --no-pager diff --no-index" # git diff but outside of git repos
+    abbr --add -- dot dotfiles
 
     ## k8s
     abbr --add -- k kubectl
