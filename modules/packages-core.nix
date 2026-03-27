@@ -12,7 +12,14 @@
     git
     jq
     lf
-    navi
+    # navi
+    kubectl
+    talosctl
+    kubectx
+    yt-dlp
+    rclone
+    rsync
+    fnm
     neovim
     ripgrep
     sd
@@ -20,7 +27,7 @@
     tealdeer
     tmux
     unixtools.watch
-    wget
+    # wget
     yq
 
     ## removed packages

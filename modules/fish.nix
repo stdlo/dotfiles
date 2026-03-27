@@ -6,10 +6,13 @@ in {
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
+      source $HOME/.nix-profile/etc/profile.d/nix.fish
       set -gx EDITOR ${editor}
       set -gx PATH $HOME/.local/bin $PATH
 
-      fnm env --use-on-cd --shell=fish | source
+      if type -q fnm
+        fnm env --use-on-cd --shell=fish | source
+      end
       atuin init fish --disable-ctrl-r --disable-up-arrow | source
       starship init fish | source
       '';
