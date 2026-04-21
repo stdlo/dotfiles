@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    fluxcd
     fnm
     ( pkgs.callPackage ./multi-gitter.package.nix { } )
     ( if pkgs.stdenv.isDarwin
